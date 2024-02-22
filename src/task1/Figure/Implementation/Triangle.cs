@@ -9,8 +9,8 @@ namespace Figure.Implementation
         public Triangle(double[] sides)
         {
             Values = [.. sides];
-            if (Values.Any(x => x <= 0))
-                throw new ArgumentException("The side of the triangle should not be zero");
+            if (Values.Any(x => x <= 0) || Values.Count() != 3)
+                throw new ArgumentException();
         }
 
         public Triangle(double a, double b, double c) 
